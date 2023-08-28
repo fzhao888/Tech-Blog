@@ -21,7 +21,8 @@ router.get('/', async (req, res) => {
         const blogPosts = blogPostData.map((blogPost) => blogPost.get({ plain: true }));
 
         // renders homepage
-        res.render('homepage', {  
+        res.render('homepage', {
+            blogPosts: blogPosts,
             logged_in: req.session.logged_in
         });
     } catch (err) {
@@ -38,7 +39,7 @@ router.get('/profile', withAuth, async (req, res) => {
             include: [{ model: BlogPost }],
         });
 
-        const user = userData.get({ plain: true });   
+        const user = userData.get({ plain: true });
 
         res.render('profile', {
             ...user,
@@ -63,15 +64,15 @@ router.get('/blogpost/:id', async (req, res) => {
                     model: Comment,
                     include: [
                         {
-                            model: User ,
+                            model: User,
                             attributes: ['username']
                         }
                     ]
                 }
             ]
-        }) 
-       
-        const blogPost = blogPostData.get({plain: true}); 
+        })
+
+        const blogPost = blogPostData.get({ plain: true });
 
         console.log(blogPost.comments[0].user);
 
@@ -80,14 +81,21 @@ router.get('/blogpost/:id', async (req, res) => {
             logged_in: req.session.logged_in
         })
 
-    } catch(err){
+    } catch (err) {
         res.status(500).json(err);
     }
 });
 
+// renders editPost
+router.get('/edit/:postid', withAuth, (req, res) => {
+    res.render('editPost', {
+        postid: req.params.postid
+    })
+});
+
 
 // renders create post
-router.get('/create', withAuth, (req,res) => {
+router.get('/create', withAuth, (req, res) => {
     res.render('create');
 });
 
@@ -95,7 +103,7 @@ router.get('/create', withAuth, (req,res) => {
 router.get('/login', (req, res) => {
     // Check if user is logged in, if true - redirect the request to /profile
     if (req.session.logged_in) {
-        res.redirect('/profile'); 
+        res.redirect('/profile');
         return;
     }
 
@@ -103,7 +111,7 @@ router.get('/login', (req, res) => {
 });
 
 // renders signup
-router.get('/signup', (req,res) => {
+router.get('/signup', (req, res) => {
     res.render('signup');
 });
 

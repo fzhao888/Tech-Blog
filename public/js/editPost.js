@@ -1,40 +1,53 @@
-const updatePostHandler = async(event) => {
+const updatePostHandler = async (event) => {
     event.preventDefault();
 
-    const title = document.querySelector('update-title').value.trim();
-    const content = document.querySelector('update-content').value.trim();
+    const title = document.querySelector('#update-title').value.trim();
+    const content = document.querySelector('#update-content').value.trim();
 
-    if(title && content){
-        const response = await fetch('/api/blogposts/:id', {
-            method: 'PUT',
-            body: JSON.stringify({title, content}),
-            headers: {
-                'Content-Type' : 'application/json'
+   
+
+    if (event.target.hasAttribute('data-id')) {
+        const id = event.target.getAttribute('data-id'); 
+
+        if (title && content) {
+            const response = await fetch(`/api/blogposts/${id}`, {
+                method: 'PUT',
+                body: JSON.stringify({ title, content }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+
+            if (response.ok) {
+                document.location.replace(`/profile`);
+
             }
-        });
-    }
-
-    if(response.ok){
-        document.location.replace('/blogPost/:id');
+        }
     }
 }
 
-const deletePostHandler = async(event) => {
+const deletePostHandler = async (event) => {
     event.preventDefault();
+    
+    if (event.target.hasAttribute('data-id')) {
+        const id = event.target.getAttribute('data-id'); 
 
-    const reponse = await fetch('api/blogposts/:id', {
-        method: 'DELETE' 
-    })
+        console.log(id)
+        const response = await fetch(`/api/blogposts/${id}`, {
+            method: 'DELETE'
+        })
 
-    if(response.ok){
-        document.location.replace('/profile');
+        if (response.ok) {
+            document.location.replace('/profile');
+        }
     }
 }
 
-document    
-    .querySelector('#update-post')
-    .addEventListener('submit',updatePostHandler);
+document
+    .querySelector('.editPost-form')
+    .addEventListener('submit', updatePostHandler);
 
-document    
+document
     .querySelector('#delete-post')
-    .addEventListener('submit',deletePostHandler);
+    .addEventListener('click', deletePostHandler);
