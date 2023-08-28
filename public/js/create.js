@@ -1,10 +1,10 @@
-const createPostHandler = async (event) => {
+const createPostHandler = async (event) => { 
     event.preventDefault();
 
     const title = document.querySelector('#title').value.trim();
 
     const content = document.querySelector('#content').value.trim();
-
+    
     if (title && content) {
         const response = await fetch(`/api/blogposts`, {
             method: 'POST',
@@ -23,5 +23,5 @@ const createPostHandler = async (event) => {
 }
 
 document
-    .querySelector('#create')
+    .querySelector('.createPost-form')
     .addEventListener('submit', createPostHandler);

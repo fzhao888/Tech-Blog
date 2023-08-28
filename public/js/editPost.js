@@ -1,4 +1,6 @@
 const updatePostHandler = async(event) => {
+    event.preventDefault();
+
     const title = document.querySelector('update-title').value.trim();
     const content = document.querySelector('update-content').value.trim();
 
@@ -18,6 +20,8 @@ const updatePostHandler = async(event) => {
 }
 
 const deletePostHandler = async(event) => {
+    event.preventDefault();
+
     const reponse = await fetch('api/blogposts/:id', {
         method: 'DELETE' 
     })
@@ -29,8 +33,8 @@ const deletePostHandler = async(event) => {
 
 document    
     .querySelector('#update-post')
-    .addEventListener(updatePostHandler);
+    .addEventListener('submit',updatePostHandler);
 
 document    
     .querySelector('#delete-post')
-    .addEventListener(deletePostHandler);
+    .addEventListener('submit',deletePostHandler);

@@ -1,6 +1,19 @@
 <div class="row mb-4 blogPost">
 
-  {{> post-details}}
+  <div class="col-md-5 post">
+    <h2>
+      <a href="/blogpost/{{id}}">{{title}}</a>
+    </h2>
+
+    <p>Post by {{username}} on {{format_date date_created}}</p>
+  </div>
+  
+  <div class="col-md-7">
+    <p>
+      {{content}}
+    </p>
+  </div>
+  
 
   {{#if logged_in}}
   <form class="addComment-form">
