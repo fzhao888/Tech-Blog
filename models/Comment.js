@@ -11,7 +11,7 @@ Comment.init(
             primaryKey: true,
             autoIncrement: true
         },
-        contents: {
+        message: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -26,6 +26,13 @@ Comment.init(
                 model: 'user',
                 key: 'id'
             }
+        },
+        blogPost_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'blogpost',
+                key: 'id'
+            }
         }
     },
     {
@@ -33,7 +40,7 @@ Comment.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'blogpost',
+        modelName: 'comment',
     }
 );
 

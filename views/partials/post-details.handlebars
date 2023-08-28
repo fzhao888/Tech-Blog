@@ -1,0 +1,12 @@
+ <div class="col-md-5 post">
+    <h2>
+      <a href="/blogPost/{{blogPost.id}}">{{blogPost.title}}</a>
+    </h2>
+
+    <p>Post by {{blogPost.user.name}} on {{format_date blogPost.date_created}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{blogPost.contents}}
+    </p>
+  </div>

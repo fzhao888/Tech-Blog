@@ -1,0 +1,27 @@
+<div class="row mb-4 blogPost">
+
+  {{> post-details}}
+
+  {{#if logged_in}}
+  <form class="addComment-form">
+
+    <div class="form-group">
+      <label for="comment">Comment</label>
+    </div>
+
+    <div class="form-group">
+      <textarea class="form-input" type="text" rows="5" id="content" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit" id="submit-comment" data-id="{{blogPost.id}}"> Submit </button>
+    </div>
+
+  </form>
+
+</div>
+{{/if}}
+
+
+
+<script src="./js/blogPost.js"></script>
