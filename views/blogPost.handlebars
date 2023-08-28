@@ -7,7 +7,7 @@
 
     <p>Post by {{username}} on {{format_date date_created}}</p>
   </div>
-  
+
   <div class="col-md-7">
     <p>
       {{content}}
@@ -16,8 +16,11 @@
   
 
   {{#if logged_in}}
-  <form class="addComment-form">
+  <div class="display-comments">
 
+  </div>
+
+  <form class="form addComment-form" data-id="{{id}}">
     <div class="form-group">
       <label for="comment">Comment</label>
     </div>
@@ -27,9 +30,8 @@
     </div>
 
     <div class="form-group">
-      <button class="btn btn-primary" type="submit" id="submit-comment" data-id="{{blogPost.id}}"> Submit </button>
+      <button class="btn btn-primary" type="submit" id="submit-comment" > Submit </button>
     </div>
-
   </form>
 
 </div>
@@ -37,4 +39,4 @@
 
 
 
-<script src="./js/blogPost.js"></script>
+<script src="../js/blogPost.js"></script>
