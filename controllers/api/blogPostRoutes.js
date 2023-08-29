@@ -17,19 +17,20 @@ router.post('/', async (req, res) => {
 });
 
 router.put('/:id', withAuth, async (req, res) => {
-    try{
+    try {
         const blogPostData = await BlogPost.update({
             title: req.body.title,
             content: req.body.content
         },
-        {
-            where: {
-                id: req.params.id
-            }
-        });
+            {
+                where: {
+                    id: req.params.id
+                }
+            });
 
         res.status(200).json(blogPostData);
-    }catch(err){
+    }
+    catch (err) {
         res.status(500).json(err);
     }
 });
@@ -43,7 +44,7 @@ router.delete('/:id', withAuth, async (req, res) => {
                 user_id: req.session.user_id,
             }
         })
-        
+
 
         if (!blogPostData) {
             res.status(404).json({ message: 'No blogpost found with this id!' });

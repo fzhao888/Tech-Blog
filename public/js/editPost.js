@@ -4,19 +4,41 @@ const updatePostHandler = async (event) => {
     const title = document.querySelector('#update-title').value.trim();
     const content = document.querySelector('#update-content').value.trim();
 
-   
+
 
     if (event.target.hasAttribute('data-id')) {
-        const id = event.target.getAttribute('data-id'); 
+        const id = event.target.getAttribute('data-id');
 
         if (title || content) {
-            const response = await fetch(`/api/blogposts/${id}`, {
-                method: 'PUT',
-                body: JSON.stringify({ title, content }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
+            if (!content) {
+                const response = await fetch(`/api/blogposts/${id}`, {
+                    method: 'PUT',
+                    body: JSON.stringify({ title }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+            }
+
+            else if (!title) {
+                const response = await fetch(`/api/blogposts/${id}`, {
+                    method: 'PUT',
+                    body: JSON.stringify({ content }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+            }
+
+            else {
+                const response = await fetch(`/api/blogposts/${id}`, {
+                    method: 'PUT',
+                    body: JSON.stringify({ title, content }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+            }
 
 
             if (response.ok) {
@@ -29,9 +51,9 @@ const updatePostHandler = async (event) => {
 
 const deletePostHandler = async (event) => {
     event.preventDefault();
-    
+
     if (event.target.hasAttribute('data-id')) {
-        const id = event.target.getAttribute('data-id'); 
+        const id = event.target.getAttribute('data-id');
 
         console.log(id)
         const response = await fetch(`/api/blogposts/${id}`, {
