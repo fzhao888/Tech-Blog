@@ -1,16 +1,18 @@
-{{#each blogposts as |blogPost|}}
- <div class="col-md-5 post">
-    <h2>
-      <a href="/edit/{{blogPost.id}}">{{blogPost.title}}</a>
-    </h2>
+ {{#each blogPosts as |blogPost| }}
 
-    <p>Post by {{blogPost.user.name}} on {{format_date blogPost.date_created}}</p>
+<div class="col-md-8 post">
+  <div class="row post-header">
+    <h2 class="post-title">
+      <a href="/blogPost/{{blogPost.id}}">{{blogPost.title}}</a>
+    </h2>
+    
+    <p>Posted by {{blogPost.user.username}} on {{format_date blogPost.date_created}}</p>
   </div>
-  <div class="col-md-7">
+
+  <div class="row post-content">
     <p>
-      {{blogPost.contents}}
+      {{blogPost.content}}
     </p>
   </div>
-  
+</div>
 {{/each}}
-

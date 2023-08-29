@@ -1,0 +1,45 @@
+body{
+    background-color: greenyellow;
+}
+
+.post{
+    display:flex;
+    flex-direction: column;
+}
+
+.post-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    background-color: black; 
+    color: yellow;
+}
+
+.post-header a{
+    color: yellow;
+}
+
+.post-content{
+    border-style: solid;
+    background-color: greenyellow;
+    color: black;
+}
+
+.display-comment{
+    flex-direction: row;
+    justify-content: space-between;
+    border-style: solid;
+    border-color: green;
+    margin-bottom: 5px;
+}
+
+.comment-header{
+    border-style: solid;
+    background-color: black;
+    height:20px;
+}
+
+.dashboard{
+    display: flex;
+    flex-direction: column;
+}

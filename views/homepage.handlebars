@@ -1,18 +1,3 @@
 <h1> The Tech Blog </h1>
 
-{{#each blogPosts as |blogPost| }}
-<div class="row mb-4 blogPost">
-  <div class="col-md-5">
-    <h2> 
-      <a href="/blogPost/{{blogPost.id}}">{{blogPost.title}}</a>
-    </h2>
-   
-    <p>Post by {{blogPost.user.name}} on {{format_date blogPost.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{blogPost.contents}}
-    </p>
-  </div>
-</div>
-{{/each}}
+{{> post-details}}

@@ -1,8 +1,26 @@
 <h1> Your Dashboard</h1>
- 
 
-<div class="col md=5 dashboard">
-  {{> post-details}}
+<div class="dashboard">
+  {{#each blogposts as |blogPost|}}
+  <div class="col-md-8 post">
+    <div class="row post-header">
+      <h2>
+        <a href="/edit/{{blogPost.id}}">{{blogPost.title}}</a>
+      </h2>
+
+      <p>Post by {{blogPost.user.name}} on {{format_date blogPost.date_created}}</p>
+
+    </div>
+
+    <div class="col-md-7">
+      <p>
+        {{blogPost.contents}}
+      </p>
+    </div>
+  </div>
+  {{/each}}
+
+
 
   <div class="newPost">
     <a href="/create" class="btn btn-primary">+ New Post</a>

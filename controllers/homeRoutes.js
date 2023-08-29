@@ -72,10 +72,8 @@ router.get('/blogpost/:id', async (req, res) => {
             ]
         })
 
-        const blogPost = blogPostData.get({ plain: true });
-
-        console.log(blogPost.comments[0].user);
-
+        const blogPost = blogPostData.get({ plain: true }); 
+        console.log(blogPost.user.username);
         res.render('blogPost', {
             ...blogPost,
             logged_in: req.session.logged_in
@@ -89,7 +87,8 @@ router.get('/blogpost/:id', async (req, res) => {
 // renders editPost
 router.get('/edit/:postid', withAuth, (req, res) => {
     res.render('editPost', {
-        postid: req.params.postid
+        postid: req.params.postid,
+        logged_in: req.session.logged_in
     })
 });
 
