@@ -36,7 +36,7 @@ Please run 'npm i sequelize' in a command line terminal to install all the seque
 
 ## Usage
 
-To use this tech blog, please visit  https://frank-tech-blog-045fc2396261.herokuapp.com/ .
+To use this tech blog, please visit  https://frank-tech-blog-045fc2396261.herokuapp.com/ .  If you haven't created an account, please sign up for one, then login!
 
 ### Screenshot of Sample Landing Page:
 
