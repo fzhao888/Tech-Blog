@@ -1,28 +1,26 @@
-<div class="col-md-10 post">
-  <div class="row post-header">
+<div class="row post">
+  <div class="col post-header">
+
     <h2 class="post-title">
       <a href="/blogPost/{{id}}">{{title}}</a>
     </h2>
-    
+
     <p>Posted by {{user.username}} on {{format_date date_created}}</p>
   </div>
 
-  <div class="row">
-    <p>
-      {{content}}
-    </p>
-  </div>
+  <p class="blogpost-content">
+    {{content}}
+  </p>
+
+</div>
 
 {{> comment-details}}
 
-</div> 
 
 
 
 {{#if logged_in}}
-
-
-
+<div class="row comment-form">
 <form class="form addComment-form" data-id="{{id}}">
   <div class="form-group">
     <label for="comment">Comment</label>
@@ -36,7 +34,7 @@
     <button class="btn btn-primary" type="submit" id="submit-comment"> Submit </button>
   </div>
 </form>
-
+</div>
 {{/if}}
 
 

@@ -1,45 +1,83 @@
-body{
-    background-color: greenyellow;
+body {
+  background-color: greenyellow;
 }
 
-.post{
-    display:flex;
-    flex-direction: column;
+
+#logout {
+  background-color: greenyellow ;
+  color: green ;
+  border: none;
+  text-decoration: none;
 }
 
-.post-header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between; 
-    background-color: black; 
-    color: yellow;
+#logout:hover{
+    text-decoration: underline;
 }
 
-.post-header a{
-    color: yellow;
+.post {
+  display: flex;
+  flex-direction: column;
+  border: solid;
+  border-color: green;
+  margin-bottom: 5px; 
 }
 
-.post-content{
-    border-style: solid;
-    background-color: greenyellow;
-    color: black;
+.post-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: black;
+  color: greenyellow;
+  padding-left: 1%;
 }
 
-.display-comment{
-    flex-direction: row;
-    justify-content: space-between;
-    border-style: solid;
-    border-color: green;
-    margin-bottom: 5px;
+.post-header a {
+  color: greenyellow;
 }
 
-.comment-header{
-    border-style: solid;
+.post-title{
+    padding-left: 1%;
+}
+
+.post-header p{
+    padding-right: 1%;
+}
+
+.post-content {
+  border-style: solid;
+  background-color: greenyellow;
+  color: black;
+  padding-left: 1%;
+}
+
+.display-comment {
+  flex-direction: row;
+  justify-content: space-between;
+  border-style: solid;
+  border-color: green;
+  margin-bottom: 5px;
+}
+
+.comment-header {
+  border-style: solid;
+  background-color: black;
+  height: 20px; 
+}
+
+.comment-message {
+    padding-left: 5px;
+}
+
+.blogpost-content {
+    padding-left: 0.5%;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.newPost a {
     background-color: black;
-    height:20px;
-}
-
-.dashboard{
-    display: flex;
-    flex-direction: column;
+    color: greenyellow;
 }
