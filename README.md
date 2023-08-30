@@ -2,7 +2,7 @@
 
 ## Description
 
-This CMS style blog sites allows developers who write about tech the ability to publish articles, blog posts, their thoughts and opinions.
+This CMS style blog sites allows developers who write about tech.  In addition, it gives them the ability to publish articles, blog posts, their thoughts and opinions.
 
 ## Table Of Contents
 
@@ -36,7 +36,7 @@ Please run 'npm i sequelize' in a command line terminal to install all the seque
 
 ## Usage
 
-To use this tech blog, please visit  https://frank-tech-blog-045fc2396261.herokuapp.com/ .  If you haven't created an account, please sign up for one, then login!
+To use this tech blog, please visit  https://frank-tech-blog-045fc2396261.herokuapp.com/ .  If you haven't created an account, please sign up for one, then login to post and comment!
 
 ### Screenshot of Sample Landing Page:
 
