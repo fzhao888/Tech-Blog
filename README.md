@@ -2,7 +2,7 @@
 
 ## Description
 
-This CMS style blog sites allows developers who write about tech.  In addition, it gives them the ability to publish articles, blog posts, their thoughts and opinions.
+This CMS style blog sites allows developers who write about tech the ability to publish articles, blog posts, their thoughts and opinions.
 
 ## Table Of Contents
 
