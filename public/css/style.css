@@ -4,7 +4,8 @@ body {
 
 nav a{
   background-color: black;
-  color: greenyellow 
+  color: greenyellow;
+  padding: 5px; 
 }
 
 #logout {
@@ -12,6 +13,7 @@ nav a{
   color: greenyellow ;
   border: none;
   text-decoration: none;
+  padding: 7px; 
 }
 
 #logout:hover{
@@ -37,7 +39,7 @@ nav a{
 }
 
 .post-header a {
-  color: greenyellow;
+  color: greenyellow; 
 }
 
 .post-title{

@@ -8,10 +8,11 @@ const updatePostHandler = async (event) => {
 
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
+        let response; 
 
         if (title || content) {
             if (!content) {
-                const response = await fetch(`/api/blogposts/${id}`, {
+                 response = await fetch(`/api/blogposts/${id}`, {
                     method: 'PUT',
                     body: JSON.stringify({ title }),
                     headers: {
@@ -21,7 +22,7 @@ const updatePostHandler = async (event) => {
             }
 
             else if (!title) {
-                const response = await fetch(`/api/blogposts/${id}`, {
+                 response = await fetch(`/api/blogposts/${id}`, {
                     method: 'PUT',
                     body: JSON.stringify({ content }),
                     headers: {
@@ -31,7 +32,7 @@ const updatePostHandler = async (event) => {
             }
 
             else {
-                const response = await fetch(`/api/blogposts/${id}`, {
+                 response = await fetch(`/api/blogposts/${id}`, {
                     method: 'PUT',
                     body: JSON.stringify({ title, content }),
                     headers: {
@@ -42,7 +43,8 @@ const updatePostHandler = async (event) => {
 
 
             if (response.ok) {
-                document.location.replace(`/`);
+                console.log(document.location);
+                document.location.replace(`../profile`);
 
             }
         }
