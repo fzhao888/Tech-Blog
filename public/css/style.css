@@ -2,16 +2,21 @@ body {
   background-color: greenyellow;
 }
 
+nav a{
+  background-color: black;
+  color: greenyellow 
+}
 
 #logout {
-  background-color: greenyellow ;
-  color: green ;
+  background-color: black ;
+  color: greenyellow ;
   border: none;
   text-decoration: none;
 }
 
 #logout:hover{
-    text-decoration: underline;
+  color: white;
+  text-decoration: underline;
 }
 
 .post {
